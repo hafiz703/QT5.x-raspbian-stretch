@@ -54,17 +54,8 @@ sudo make install
 echo 'export LD_LIBRARY_PATH=/opt/QT5/lib' >> ~/.bashrc 
 echo  'export PATH=/opt/QT5/bin:$PATH' >> ~/.bashrc 
 
-# Install Lorn Potters Sensehat Plugin on the system 
-mkdir /home/pi/senshatplugin
-git clone https://github.com/lpotter/qsensors-sensehatplugin.git /home/pi/senshatplugin
-cd /home/pi/senshatplugin
-qmake
-make -j2
-sudo make install
+#eglfs fix
 
-# Delete shadow build directory
-#cd
-#sudo rm -r build
-
-# Delete source code folder
-#sudo rm -r qt-everywhere-opensource-src-5.9.4
+export QT_QPA_PLATFORM=eglfs
+export QT_QPA_PLATFORM_PLUGIN_PATH=/usr/local/qt5pi/plugins/platforms
+export LD_LIBRARY_PATH=/usr/local/qt5pi/lib
