@@ -59,3 +59,5 @@ echo  'export PATH=/opt/QT5/bin:$PATH' >> ~/.bashrc
 export QT_QPA_PLATFORM=eglfs
 export QT_QPA_PLATFORM_PLUGIN_PATH=/usr/local/qt5pi/plugins/platforms
 export LD_LIBRARY_PATH=/usr/local/qt5pi/lib
+
+export QT_QPA_EGLFS_INTEGRATION=none
