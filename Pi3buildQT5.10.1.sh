@@ -10,7 +10,7 @@ sudo apt-get install sense-hat libatspi-dev build-essential libfontconfig1-dev l
 sudo apt-get install bluez libbluetooth-dev
 sudo apt-get install libasound2-dev pulseaudio libpulse-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly gstreamer1.0-plugins-bad gstreamer1.0-pulseaudio gstreamer1.0-tools gstreamer1.0-alsa gstreamer-tools
 sudo apt-get install libpq-dev libmariadbclient-dev
-
+sudo apt-get install mesa-utils
 # Download QT 5.10.1 Source code
 #wget http://download.qt.io/official_releases/qt/5.10/5.10.1/single/qt-everywhere-src-5.10.1.tar.xz
 wget http://download.qt.io/official_releases/qt/5.12/5.12.3/single/qt-everywhere-src-5.12.3.tar.xz
