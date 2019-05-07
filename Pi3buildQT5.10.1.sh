@@ -13,21 +13,21 @@ sudo apt-get install libpq-dev libmariadbclient-dev
 sudo apt-get install mesa-utils
 # Download QT 5.10.1 Source code
 #wget http://download.qt.io/official_releases/qt/5.10/5.10.1/single/qt-everywhere-src-5.10.1.tar.xz
-wget http://download.qt.io/official_releases/qt/5.12/5.12.3/single/qt-everywhere-src-5.12.3.tar.xz
+wget http://download.qt.io/official_releases/qt/5.12/5.12.2/single/qt-everywhere-src-5.12.2.tar.xz
 
 # Untar Source code
-tar xf qt-everywhere-src-5.12.3.tar.xz
+tar xf qt-everywhere-src-5.12.2.tar.xz
 
 # Delete source tarball to save some space
-sudo rm -r qt-everywhere-src-5.12.3.tar.xz
+sudo rm -r qt-everywhere-src-5.12.2.tar.xz
 
 # Delete qmake.conf for Raspberry Pi3
-cd /home/pi/qt-everywhere-src-5.12.3/qtbase/mkspecs/devices/linux-rasp-pi3-g++
+cd /home/pi/qt-everywhere-src-5.12.2/qtbase/mkspecs/devices/linux-rasp-pi3-g++
 sudo rm qmake.conf
 
 # Download modified qmake.conf for Raspberry Pi3
 cd /home/pi/QT5.x-raspbian-stretch/qmakePi3
-sudo cp qmake.conf /home/pi/qt-everywhere-src-5.12.3/qtbase/mkspecs/devices/linux-rasp-pi3-g++
+sudo cp qmake.conf /home/pi/qt-everywhere-src-5.12.2/qtbase/mkspecs/devices/linux-rasp-pi3-g++
 
 # Create Shadow build directory 
 cd
@@ -43,21 +43,21 @@ PKG_CONFIG_LIBDIR=/usr/lib/arm-linux-gnueabihf/pkgconfig PKG_CONFIG_SYSROOT_DIR=
 
 
 # Compile QT with 4 cores 
-make -j2
+#make -j2
 
 
 # Install QT on the system 
-sudo make install
+#sudo make install
 
 
 # Add enviroment variables to bashrc
-echo 'export LD_LIBRARY_PATH=/opt/QT5/lib' >> ~/.bashrc 
-echo  'export PATH=/opt/QT5/bin:$PATH' >> ~/.bashrc 
+#echo 'export LD_LIBRARY_PATH=/opt/QT5/lib' >> ~/.bashrc 
+#echo  'export PATH=/opt/QT5/bin:$PATH' >> ~/.bashrc 
 
 #eglfs fix
 
-export QT_QPA_PLATFORM=eglfs
-export QT_QPA_PLATFORM_PLUGIN_PATH=/usr/local/qt5pi/plugins/platforms
-export LD_LIBRARY_PATH=/usr/local/qt5pi/lib
+#export QT_QPA_PLATFORM=eglfs
+#export QT_QPA_PLATFORM_PLUGIN_PATH=/usr/local/qt5pi/plugins/platforms
+#export LD_LIBRARY_PATH=/usr/local/qt5pi/lib
 
-export QT_QPA_EGLFS_INTEGRATION=none
+#export QT_QPA_EGLFS_INTEGRATION=none
