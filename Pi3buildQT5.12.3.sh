@@ -54,7 +54,7 @@ PKG_CONFIG_LIBDIR=/usr/lib/arm-linux-gnueabihf/pkgconfig:/usr/share/pkgconfig \
 -system-freetype \
 -fontconfig \
 -glib \
--prefix /opt/Qt5.12 \
+-prefix /opt/Qt5 \
 -qpa eglfs
 
 
