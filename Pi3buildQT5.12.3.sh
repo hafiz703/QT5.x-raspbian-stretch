@@ -19,14 +19,14 @@
 #sudo rm -r qt-everywhere-src-5.12.3.tar.xz
 
 #git clone https://github.com/oniongarlic/qt-raspberrypi-configuration.git
-cd qt-raspberrypi-configuration && make install DESTDIR=../../qt-everywhere-src-5.12.3
-sudo apt-get install build-essential libfontconfig1-dev libdbus-1-dev libfreetype6-dev libicu-dev libinput-dev libxkbcommon-dev libsqlite3-dev libssl-dev libpng-dev libjpeg-dev libglib2.0-dev libraspberrypi-dev
+cd  ../qt-raspberrypi-configuration && make install DESTDIR=../qt-everywhere-src-5.12.3
+#sudo apt-get install build-essential libfontconfig1-dev libdbus-1-dev libfreetype6-dev libicu-dev libinput-dev libxkbcommon-dev libsqlite3-dev libssl-dev libpng-dev libjpeg-dev libglib2.0-dev libraspberrypi-dev
 
 
 # Create Shadow build directory 
 cd
 mkdir build
-#cd build
+cd build
 
 # create and Change ownership of QT install folder
 sudo mkdir /opt/QT5
@@ -59,13 +59,13 @@ PKG_CONFIG_LIBDIR=/usr/lib/arm-linux-gnueabihf/pkgconfig:/usr/share/pkgconfig \
 
 
 # Compile QT with 4 cores 
-#make -j2
+make -j2
 
 
 # Install QT on the system 
-#sudo make install
+sudo make install
 
 
 # Add enviroment variables to bashrc
-#echo 'export LD_LIBRARY_PATH=/opt/QT5/lib' >> ~/.bashrc 
-#echo  'export PATH=/opt/QT5/bin:$PATH' >> ~/.bashrc 
+echo 'export LD_LIBRARY_PATH=/opt/QT5/lib' >> ~/.bashrc 
+echo  'export PATH=/opt/QT5/bin:$PATH' >> ~/.bashrc 
