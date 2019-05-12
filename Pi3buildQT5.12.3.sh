@@ -29,8 +29,8 @@ mkdir build
 cd build
 
 # create and Change ownership of QT install folder
-sudo mkdir /opt/QT5
-sudo chown pi:pi /opt/QT5
+sudo mkdir /opt/Qt5
+sudo chown pi:pi /opt/Qt5
 
 
 
@@ -67,5 +67,5 @@ sudo make install
 
 
 # Add enviroment variables to bashrc
-echo 'export LD_LIBRARY_PATH=/opt/QT5/lib' >> ~/.bashrc 
-echo  'export PATH=/opt/QT5/bin:$PATH' >> ~/.bashrc 
+echo 'export LD_LIBRARY_PATH=/opt/Qt5/lib' >> ~/.bashrc 
+echo  'export PATH=/opt/Qt5/bin:$PATH' >> ~/.bashrc 
