@@ -70,3 +70,21 @@ sudo make install
 # Add enviroment variables to bashrc
 echo 'export LD_LIBRARY_PATH=/opt/Qt5/lib' >> ~/.bashrc 
 echo  'export PATH=/opt/Qt5/bin:$PATH' >> ~/.bashrc 
+
+
+#fix for Qt Multimedia and Qt Location
+wget http://download.qt.io/development_releases/qt/5.12/5.12.0-rc2/submodules/qtmultimedia-everywhere-src-5.12.0-rc2.tar.xz
+tar xvf qtmultimedia-everywhere-src-5.12.0-rc2.tar.xz
+cd qtmultimedia-everywhere-src-5.12.0-rc2
+qmake
+make -j2
+sudo make install
+
+wget http://download.qt.io/development_releases/qt/5.12/5.12.0-rc2/submodules/qtlocation-everywhere-src-5.12.0-rc2.tar.xz
+tar xvf qtlocation-everywhere-src-5.12.0-rc2.tar.xz
+cd qtlocation-everywhere-src-5.12.0-rc2
+qmake
+make -j2
+sudo make install
+
+
