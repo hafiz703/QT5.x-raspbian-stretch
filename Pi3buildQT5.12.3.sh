@@ -18,13 +18,13 @@ tar xf qt-everywhere-src-5.12.3.tar.xz
 # Delete source tarball to save some space
 sudo rm -r qt-everywhere-src-5.12.3.tar.xz
 
-#git clone https://github.com/oniongarlic/qt-raspberrypi-configuration.git
-cd  ../qt-raspberrypi-configuration && make install DESTDIR=../qt-everywhere-src-5.12.3
+git clone https://github.com/oniongarlic/qt-raspberrypi-configuration.git
+cd  qt-raspberrypi-configuration && make install DESTDIR=qt-everywhere-src-5.12.3
 sudo apt-get install build-essential libfontconfig1-dev libdbus-1-dev libfreetype6-dev libicu-dev libinput-dev libxkbcommon-dev libsqlite3-dev libssl-dev libpng-dev libjpeg-dev libglib2.0-dev libraspberrypi-dev
 
 
 # Create Shadow build directory 
-cd
+
 mkdir build
 cd build
 
@@ -60,31 +60,31 @@ PKG_CONFIG_LIBDIR=/usr/lib/arm-linux-gnueabihf/pkgconfig:/usr/share/pkgconfig \
 
 
 # Compile QT with 4 cores 
-make -j2
+#make -j2
 
 
 # Install QT on the system 
-sudo make install
+#sudo make install
 
 
 # Add enviroment variables to bashrc
-echo 'export LD_LIBRARY_PATH=/opt/Qt5/lib' >> ~/.bashrc 
-echo  'export PATH=/opt/Qt5/bin:$PATH' >> ~/.bashrc 
+#echo 'export LD_LIBRARY_PATH=/opt/Qt5/lib' >> ~/.bashrc 
+#echo  'export PATH=/opt/Qt5/bin:$PATH' >> ~/.bashrc 
 
 
 #fix for Qt Multimedia and Qt Location
-wget http://download.qt.io/development_releases/qt/5.12/5.12.0-rc2/submodules/qtmultimedia-everywhere-src-5.12.0-rc2.tar.xz
-tar xvf qtmultimedia-everywhere-src-5.12.0-rc2.tar.xz
-cd qtmultimedia-everywhere-src-5.12.0-rc2
-qmake
-make -j2
-sudo make install
+#wget http://download.qt.io/development_releases/qt/5.12/5.12.0-rc2/submodules/qtmultimedia-everywhere-src-5.12.0-rc2.tar.xz
+#tar xvf qtmultimedia-everywhere-src-5.12.0-rc2.tar.xz
+#cd qtmultimedia-everywhere-src-5.12.0-rc2
+#qmake
+#make -j2
+#sudo make install
 
-wget http://download.qt.io/development_releases/qt/5.12/5.12.0-rc2/submodules/qtlocation-everywhere-src-5.12.0-rc2.tar.xz
-tar xvf qtlocation-everywhere-src-5.12.0-rc2.tar.xz
-cd qtlocation-everywhere-src-5.12.0-rc2
-qmake
-make -j2
-sudo make install
+#wget http://download.qt.io/development_releases/qt/5.12/5.12.0-rc2/submodules/qtlocation-everywhere-src-5.12.0-rc2.tar.xz
+#tar xvf qtlocation-everywhere-src-5.12.0-rc2.tar.xz
+#cd qtlocation-everywhere-src-5.12.0-rc2
+#qmake
+#make -j2
+#sudo make install
 
 
